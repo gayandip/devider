@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devider.in</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <h2>Devider</h2>
+        <div class="contents">
+            <a href="index.html">PRICE</a>
+            <a href="fcf.html">INTRINSIC VALUE(DCF)</a>
+            <!-- <a href="">SIP</a> -->
+        </div>
+    </nav>
+    <div class="description">
+        <h3 id="price">INTRINSIC VALUE</h3>
+        <hr>
+        <p>Calculate the actual intrinsic value of the company through Discounted Cash Flow Method(DCF), based on expected future cash flows and growth.</p>
+        <p>Don't be agressive, assumptions can go wrong.</p>
+    </div>
+    <div class="calc">
+        <div>
+            <span>Current FCF</span><input type="number" name="number" id="v1">
+            <br>
+            <span>FCF Growth Rate(%)</span><input type="number" name="number" value="12" id="v2">
+            <br>
+            <span>Years</span><input type="number" name="number" value="5" id="v3">
+            <br>
+            <span>Expected Return Rate(%)</span><input type="number" value="15" name="number" id="v4">
+            <br>
+            <span>Expected M-cap Multiple</span><input type="number" name="number" id="v5">
+            <br>
+            <span>Current Profit</span><input type="number" name="number" id="v6">
+            <br>
+            <span>Current EPS</span><input type="number" name="number" id="v7">
+            <br>
+            <button onclick="calc()">Calculate</button>
+            <hr>
+            <input type="number" name="" id="res" readonly>
+        </div>
+    </div>
+    <footer>
+        <h2>Thanks for visiting</h2>
+        <hr>
+        <h3>Calculate Everything</h3>
+    </footer>
+    <script>
+        function calc() {
+            var a = document.getElementById('v1').value;
+            var b = document.getElementById('v2').value;
+            var c = document.getElementById('v3').value;
+            var d = document.getElementById('v4').value;
+            var e = document.getElementById('v5').value;
+            var f = document.getElementById('v6').value;
+            var g = document.getElementById('v7').value;
+
+            a = parseFloat(a);
+            b = parseFloat(b);
+            c = parseFloat(c);
+            d = parseFloat(d);
+            e = parseFloat(e);
+            f = parseFloat(f);
+            g = parseFloat(g);
+
+            b = b / 100;
+            d = d / 100;
+            var n=0;
+            var i = 1;
+            var u=0;
+
+            while (i <= c) {
+                a = (a * (1 + b));
+                u=a/Math.pow((1+d),i);
+                n=n+u;
+                i++;
+                var m=a*e;
+            }
+            var mct = m/Math.pow((1+d),c);
+            mct=mct+n;
+
+            document.getElementById('res').value = (mct/(f/g)).toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
