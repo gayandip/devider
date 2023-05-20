@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>devider.in</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -13,17 +13,11 @@
     <nav>
         <h2>Devider</h2>
         <div class="contents">
-            <a href="index.html">PRICE</a>
+            <a href="index.html" style="color: yellow;">PRICE</a>
             <a href="fcf.html">INTRINSIC VALUE(DCF)</a>
             <!-- <a href="">SIP</a> -->
         </div>
     </nav>
-    <div class="description">
-        <h3 id="price">PRICE</h3>
-        <hr>
-        <p>Calculate the exact price, where you should buy the stock to get the expected returns based on expected
-            growth and price to earnings raio (PE) in future</p>
-    </div>
     <div class="calc">
         <div>
             <span>Current EPS</span><input type="number" name="number" id="v1">
@@ -42,9 +36,10 @@
         </div>
     </div>
     <footer>
-        <h2>Thanks for visiting</h2>
+        <h2>Calculate the exact price, where you should buy the stock to get the expected returns based on expected
+            growth and price to earnings raio (PE) in future</h2>
         <hr>
-        <h3>Calculate Everything</h3>
+        <h3>Thanks for visiting</h3>
     </footer>
     <script>
         function calc() {
